@@ -15,12 +15,12 @@ SELECT DB_NAME();
 DROP DATABASE school_db;
 
 -- Creating a Table
-CREATE TABLE students (
+/*CREATE TABLE students (
     student_id INT,
     name VARCHAR(100),
     age INT,
     grade INT
-);
+);*/
 
 EXEC sp_help 'students';
 
