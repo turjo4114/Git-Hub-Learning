@@ -1,5 +1,65 @@
-use school_db;
--- Updating data in the table
-UPDATE students
-SET age = 24
-WHERE student_id = 68;
+CREATE TABLE employees (
+    emp_id INT IDENTITY(1001,1) PRIMARY KEY,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    job_title VARCHAR(50) NOT NULL,
+    department VARCHAR(50) NOT NULL,
+    salary INT NOT NULL,
+    hire_date DATE DEFAULT GETDATE() NOT NULL,
+    city VARCHAR(50) NOT NULL
+)
+
+SELECT * FROM employees;
+
+INSERT INTO employees (fname, lname, email, job_title, department, salary, hire_date, city) VALUES
+('James', 'Smith', 'james.smith@company.com', 'Software Engineer', 'IT', 95000, '2020-01-15', 'New York'),
+('Maria', 'Garcia', 'maria.garcia@company.com', 'Data Analyst', 'Data', 78000, '2019-03-22', 'Chicago'),
+('Robert', 'Johnson', 'robert.johnson@company.com', 'Project Manager', 'Operations', 105000, '2018-11-10', 'Seattle'),
+('Linda', 'Williams', 'linda.williams@company.com', 'HR Specialist', 'Human Resources', 62000, '2021-06-01', 'Austin'),
+('Michael', 'Brown', 'michael.brown@company.com', 'Sales Manager', 'Sales', 110000, '2017-08-14', 'Boston'),
+('Elizabeth', 'Jones', 'elizabeth.jones@company.com', 'Marketing Coordinator', 'Marketing', 55000, '2022-02-18', 'Denver'),
+('William', 'Miller', 'william.miller@company.com', 'Database Administrator', 'IT', 102000, '2016-12-05', 'San Francisco'),
+('Barbara', 'Davis', 'barbara.davis@company.com', 'Financial Analyst', 'Finance', 85000, '2020-09-30', 'New York'),
+('Richard', 'Rodriguez', 'richard.rodriguez@company.com', 'Software Engineer', 'IT', 92000, '2021-01-10', 'Austin'),
+('Susan', 'Martinez', 'susan.martinez@company.com', 'Content Strategist', 'Marketing', 68000, '2019-07-25', 'Chicago'),
+('Joseph', 'Hernandez', 'joseph.hernandez@company.com', 'Sales Representative', 'Sales', 58000, '2022-11-11', 'Boston'),
+('Jessica', 'Lopez', 'jessica.lopez@company.com', 'UX Designer', 'Product', 88000, '2020-05-04', 'Seattle'),
+('Thomas', 'Gonzalez', 'thomas.gonzalez@company.com', 'Systems Analyst', 'IT', 81000, '2018-04-19', 'Denver'),
+('Sarah', 'Wilson', 'sarah.wilson@company.com', 'Operations Manager', 'Operations', 98000, '2017-10-02', 'San Francisco'),
+('Charles', 'Anderson', 'charles.anderson@company.com', 'Data Scientist', 'Data', 125000, '2021-08-20', 'New York'),
+('Karen', 'Thomas', 'karen.thomas@company.com', 'HR Director', 'Human Resources', 115000, '2015-02-28', 'Austin'),
+('Christopher', 'Taylor', 'christopher.taylor@company.com', 'QA Tester', 'IT', 65000, '2022-03-15', 'Chicago'),
+('Lisa', 'Moore', 'lisa.moore@company.com', 'Account Executive', 'Sales', 75000, '2019-09-12', 'Boston'),
+('Daniel', 'Jackson', 'daniel.jackson@company.com', 'Product Manager', 'Product', 130000, '2018-01-08', 'Seattle'),
+('Nancy', 'Martin', 'nancy.martin@company.com', 'Accounting Clerk', 'Finance', 52000, '2023-01-22', 'Denver'),
+('Matthew', 'Lee', 'matthew.lee@company.com', 'Frontend Developer', 'IT', 89000, '2021-05-17', 'San Francisco'),
+('Sandra', 'Perez', 'sandra.perez@company.com', 'Marketing Manager', 'Marketing', 95000, '2016-11-30', 'New York'),
+('Anthony', 'Thompson', 'anthony.thompson@company.com', 'Sales Representative', 'Sales', 60000, '2022-07-07', 'Austin'),
+('Margaret', 'White', 'margaret.white@company.com', 'Business Analyst', 'Operations', 82000, '2019-04-14', 'Chicago'),
+('Mark', 'Harris', 'mark.harris@company.com', 'Backend Developer', 'IT', 105000, '2020-10-25', 'Boston'),
+('Ashley', 'Sanchez', 'ashley.sanchez@company.com', 'Recruiter', 'Human Resources', 58000, '2023-02-14', 'Seattle'),
+('Donald', 'Clark', 'donald.clark@company.com', 'Chief Financial Officer', 'Finance', 180000, '2014-06-01', 'Denver'),
+('Kimberly', 'Ramirez', 'kimberly.ramirez@company.com', 'Graphic Designer', 'Marketing', 64000, '2021-09-09', 'San Francisco'),
+('Steven', 'Lewis', 'steven.lewis@company.com', 'Network Engineer', 'IT', 93000, '2018-08-11', 'New York'),
+('Emily', 'Robinson', 'emily.robinson@company.com', 'Customer Success', 'Support', 54000, '2022-04-03', 'Austin'),
+('Paul', 'Walker', 'paul.walker@company.com', 'Data Analyst', 'Data', 76000, '2020-12-01', 'Chicago'),
+('Donna', 'Young', 'donna.young@company.com', 'Sales Director', 'Sales', 140000, '2015-05-18', 'Boston'),
+('Andrew', 'Allen', 'andrew.allen@company.com', 'Software Engineer', 'IT', 96000, '2019-11-20', 'Seattle'),
+('Michelle', 'King', 'michelle.king@company.com', 'PR Specialist', 'Marketing', 70000, '2021-07-28', 'Denver'),
+('Joshua', 'Wright', 'joshua.wright@company.com', 'Cloud Architect', 'IT', 145000, '2017-03-09', 'San Francisco'),
+('Carol', 'Scott', 'carol.scott@company.com', 'Office Manager', 'Operations', 55000, '2023-05-10', 'New York'),
+('Kenneth', 'Torres', 'kenneth.torres@company.com', 'Business Developer', 'Sales', 85000, '2020-02-15', 'Austin'),
+('Amanda', 'Nguyen', 'amanda.nguyen@company.com', 'UI Designer', 'Product', 87000, '2018-06-22', 'Chicago'),
+('Kevin', 'Hill', 'kevin.hill@company.com', 'Security Analyst', 'IT', 99000, '2021-12-05', 'Boston'),
+('Melissa', 'Flores', 'melissa.flores@company.com', 'Payroll Specialist', 'Finance', 61000, '2019-01-14', 'Seattle'),
+('Brian', 'Green', 'brian.green@company.com', 'DevOps Engineer', 'IT', 115000, '2016-09-08', 'Denver'),
+('Deborah', 'Adams', 'deborah.adams@company.com', 'SEO Specialist', 'Marketing', 66000, '2022-10-31', 'San Francisco'),
+('George', 'Nelson', 'george.nelson@company.com', 'Data Engineer', 'Data', 110000, '2020-06-17', 'New York'),
+('Stephanie', 'Baker', 'stephanie.baker@company.com', 'Customer Support', 'Support', 48000, '2023-03-01', 'Austin'),
+('Edward', 'Hall', 'edward.hall@company.com', 'IT Support', 'IT', 53000, '2021-08-08', 'Chicago'),
+('Rebecca', 'Rivera', 'rebecca.rivera@company.com', 'VP of Sales', 'Sales', 160000, '2013-11-15', 'Boston'),
+('Ronald', 'Campbell', 'ronald.campbell@company.com', 'Scrum Master', 'Product', 94000, '2019-05-27', 'Seattle'),
+('Sharon', 'Mitchell', 'sharon.mitchell@company.com', 'Compliance Officer', 'Legal', 105000, '2017-12-12', 'Denver'),
+('Timothy', 'Carter', 'timothy.carter@company.com', 'Full Stack Developer', 'IT', 108000, '2020-04-20', 'San Francisco'),
+('Laura', 'Roberts', 'laura.roberts@company.com', 'Event Planner', 'Marketing', 59000, '2022-09-05', 'New York');
