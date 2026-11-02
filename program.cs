@@ -11,7 +11,7 @@ namespace firstapp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello Creackheads!!");
-            Console.WriteLine("GTA VI is comming very very very soon!!\nBe ready on nomember 19!!!!");
+            Console.WriteLine("GTA VI is comming very very soon!!\nBe ready on nomember 19!!!!");
             Console.ReadLine();
 
         }
